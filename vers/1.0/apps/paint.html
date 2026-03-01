@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="it">
+<head><meta charset="UTF-8"><title>Paint</title></head>
+<body>
+<h2>Paint App</h2>
+<canvas id="canvas" width="380" height="260" style="border:1px solid #000;"></canvas>
+<script>
+let c=document.getElementById('canvas'),ctx=c.getContext('2d'),painting=false;
+c.onmousedown=()=>painting=true;
+c.onmouseup=()=>painting=false;
+c.onmousemove=e=>{if(painting)ctx.lineTo(e.offsetX,e.offsetY); ctx.stroke();}
+</script>
+</body>
+</html>
