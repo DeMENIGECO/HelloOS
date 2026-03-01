@@ -1,0 +1,68 @@
+body{
+  margin:0;
+  font-family:sans-serif;
+  background:#1e1e2f;
+  color:white;
+  overflow:hidden;
+}
+
+#desktop{
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  bottom:40px;
+  padding:20px;
+  display:flex;
+  flex-wrap:wrap;
+  gap:20px;
+}
+
+.icon{
+  width:80px;
+  text-align:center;
+  cursor:pointer;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+
+.icon span{
+  margin-top:5px;
+}
+
+.icon:hover{
+  background:rgba(255,255,255,0.1);
+  border-radius:10px;
+}
+
+#taskbar{
+  position:absolute;
+  bottom:0;
+  left:0;
+  right:0;
+  height:40px;
+  background:#111;
+  display:flex;
+  align-items:center;
+  padding-left:10px;
+}
+
+.window{
+  position:absolute;
+  top:100px;
+  left:100px;
+  width:400px;
+  height:300px;
+  background:white;
+  color:black;
+  border-radius:10px;
+  box-shadow:0 0 10px black;
+  overflow:hidden;
+}
+
+.window iframe{
+  width:100%;
+  height:100%;
+  border:none;
+}
