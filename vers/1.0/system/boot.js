@@ -1,37 +1,52 @@
-const desktop = document.getElementById("desktop");
-
-function addIcon(name, icon, app){
-  let div = document.createElement("div");
-  div.className="icon";
-  div.innerHTML = icon+"<span>"+name+"</span>";
-  div.onclick=()=>UI.openWindow(app);
-  desktop.appendChild(div);
-}
+const taskbar = document.getElementById("taskbar");
 
 function addStartButton(){
   let btn=document.createElement("button");
-  btn.id="startButton";
   btn.innerText="Start";
+
   btn.onclick=()=>{
-    if(!document.getElementById("startMenuFrame")){
-      let frame=document.createElement("iframe");
-      frame.src="system/startmenu/startmenu.html";
-      frame.id="startMenuFrame";
-      document.body.appendChild(frame);
-    }else{
-      document.getElementById("startMenuFrame").remove();
+    let old=document.getElementById("startMenuFrame");
+
+    if(old){
+      old.remove();
+      return;
     }
+
+    let frame=document.createElement("iframe");
+    frame.src="system/startmenu/startmenu.html";
+    frame.id="startMenuFrame";
+
+    frame.style.position="absolute";
+    frame.style.bottom="45px";
+    frame.style.left="5px";
+    frame.style.border="none";
+    frame.style.zIndex="999";
+
+    document.body.appendChild(frame);
   };
-  document.getElementById("taskbar").appendChild(btn);
+
+  taskbar.appendChild(btn);
+}
+
+function addDockApp(name,icon,link){
+  let btn=document.createElement("button");
+  btn.innerHTML=icon;
+  btn.title=name;
+
+  btn.onclick=()=>UI.openWindow(link);
+
+  taskbar.appendChild(btn);
 }
 
 function boot(){
 
-addIcon("Search","🔎","apps/search.html");
-addIcon("Finder","📁","apps/finder.html");
-addIcon("Notes","📝","apps/notes.html");
+  addStartButton();
 
-addStartButton();
+  addDockApp("Finder","📁","apps/finder.html");
+  addDockApp("Browser","🌐","apps/browser.html");
+  addDockApp("Terminal","💻","apps/terminal.html");
+  addDockApp("Settings","⚙️","apps/settings.html");
+
 }
 
 boot();
