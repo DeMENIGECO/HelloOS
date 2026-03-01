@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html lang="it">
+<head><meta charset="UTF-8"><title>Clock</title></head>
+<body>
+<h2>Clock</h2>
+<p id="time"></p>
+<script>
+setInterval(()=>document.getElementById('time').innerText=new Date().toLocaleTimeString(),1000);
+</script>
+</body>
+</html>
