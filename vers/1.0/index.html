@@ -7,27 +7,17 @@
 </head>
 <body>
 
-<div id="desktop">
-
-  <div class="icon" onclick="openApp('apps/search.html')">🔎<span>Search</span></div>
-  <div class="icon" onclick="openApp('apps/finder.html')">📁<span>Finder</span></div>
-  <div class="icon" onclick="openApp('apps/notes.html')">📝<span>Notes</span></div>
-  <div class="icon" onclick="openApp('apps/calculator.html')">🧮<span>Calculator</span></div>
-  <div class="icon" onclick="openApp('apps/clock.html')">⏰<span>Clock</span></div>
-  <div class="icon" onclick="openApp('apps/calendar.html')">📅<span>Calendar</span></div>
-  <div class="icon" onclick="openApp('apps/paint.html')">🎨<span>Paint</span></div>
-  <div class="icon" onclick="openApp('apps/terminal.html')">💻<span>Terminal</span></div>
-  <div class="icon" onclick="openApp('apps/music.html')">🎵<span>Music</span></div>
-  <div class="icon" onclick="openApp('apps/settings.html')">⚙️<span>Settings</span></div>
-  <div class="icon" onclick="openApp('apps/browser.html')">🌐<span>Browser</span></div>
-  <div class="icon" onclick="openApp('apps/about.html')">ℹ️<span>About</span></div>
-
-</div>
+<div id="desktop"></div>
 
 <div id="taskbar">
   <span>HelloOS</span>
 </div>
 
-<script src="js/system.js"></script>
+<script src="system/kernel.js"></script>
+<script src="system/ui.js"></script>
+<script src="Services/searchService.js"></script>
+<script src="Services/fileService.js"></script>
+<script src="system/boot.js"></script>
+
 </body>
 </html>
