@@ -1,4 +1,0 @@
-const AllowedServices=[
- "files",
- "search"
-];
